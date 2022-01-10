@@ -6,10 +6,15 @@ import { Provider } from 'react-redux';
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
 import './index.css';
 import App from './App';
-import TestPage from './pages/TestPage';
 import BaseLayout from './common/layout/BaseLayout'
+
+library.add(fab, fas)
 
 const persistor = persistStore(store);
 
@@ -21,7 +26,6 @@ ReactDOM.render(
           <BaseLayout>
             <Routes>
               <Route path="/" element={<App />}/>
-              <Route path="/test_page" element={<TestPage />}/>
             </Routes>
           </BaseLayout>
         </Router>
