@@ -1,5 +1,7 @@
 import { configureStore, ThunkAction, Action, combineReducers } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+
+import mapReducer from '../features/map/mapSlice'
+
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage';
 
@@ -10,7 +12,7 @@ export const config = {
 }
 
 const rootReducer = combineReducers({
-  counter: counterReducer
+  map: mapReducer
 })
 
 const persisted = persistReducer(config, rootReducer)
