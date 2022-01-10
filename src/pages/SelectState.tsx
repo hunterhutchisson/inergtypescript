@@ -8,11 +8,13 @@ import { updateSelectState, selectStateData, stateDataObject } from '../features
 const SelectState = () => {
     const dispatch = useAppDispatch();
     const stateData = useAppSelector(selectStateData)
-    const [selectedState, setSelectedState] = useState<stateDataObject | null>(null)
+    const [selectedState, setSelectedState] = useState(null)
 
     const handleSelectState = (e: FormEvent) => {
         let state = stateData.find(({state})=> state === e.target.value)
-        dispatch(updateSelectState(state))
+        if(state){
+          dispatch(updateSelectState(state))
+        }
     }
     const handleResetState = () => {
         setSelectedState(null)

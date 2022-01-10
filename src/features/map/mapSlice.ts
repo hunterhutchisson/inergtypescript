@@ -95,7 +95,7 @@ export interface stateDataObject {
 }
 
 export interface dataState {
-    usData: usData | {};
+    usData: usData;
     stateData: Array<stateDataObject>;
     chosenState: stateDataObject | null;
     viewTheme: string;
