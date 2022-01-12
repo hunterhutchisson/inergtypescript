@@ -138,7 +138,7 @@ export const mapSlice = createSlice({
     name: 'Map',
     initialState,
     reducers: { 
-        updateSelectState: (state, action: PayloadAction<stateDataObject>) => {
+        updateSelectState: (state, action: PayloadAction<stateDataObject | null>) => {
             state.chosenState = action.payload
         },
         updateSelectViewTheme: (state, action: PayloadAction<string>) => {

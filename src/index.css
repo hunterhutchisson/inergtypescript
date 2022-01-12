@@ -98,3 +98,7 @@ code {
 .btn-size{
   font-size: 10px;
 }
+
+select{
+  display: block;
+}

@@ -12,7 +12,7 @@ function Header() {
     const viewTheme = useAppSelector(selectViewTheme)
     return (
           <>
-  <Nav className="justify-content-end" variant="pills" defaultActiveKey="day" onClick={(e: FormEvent)=>dispatch(updateSelectViewTheme(e.target.id))}>
+  <Nav className="justify-content-end" variant="pills" defaultActiveKey="day" onClick={(e)=>dispatch(updateSelectViewTheme(e.target.id))}>
     <Nav.Item>
       <Nav.Link className={(viewTheme === "night") ? "btn-grey":""} eventKey='day' id="day">Day</Nav.Link>
     </Nav.Item>

@@ -10,8 +10,9 @@ const SelectState = () => {
     const stateData = useAppSelector(selectStateData)
     const [selectedState, setSelectedState] = useState(null)
 
-    const handleSelectState = (e: FormEvent) => {
+    const handleSelectState = (e: { target: { value: string; }; }) => {
         let state = stateData.find(({state})=> state === e.target.value)
+        console.log(state);
         if(state){
           dispatch(updateSelectState(state))
         }
@@ -29,8 +30,8 @@ const SelectState = () => {
       </div>
       <div className='row'>
         <div className='col-12'>
-      <select defaultValue={selectedState} onChange={handleSelectState}>
-        <option hidden value="defaultValue">Pick a State</option>
+      <select defaultValue={selectedState || "state"} onChange={handleSelectState}>
+        <option value="defaultValue">Pick a State</option>
         {stateData.map(state => {
           return <option key={state.state} value={state.state}>{state.state}</option>
         })}
