@@ -56,7 +56,7 @@ const Map = ({stateObj}: {stateObj: stateDataObject | null}) => {
                 {stateObj 
                 ?
                 <>
-                <Marker latitude={stateObj.coordinates.latitude} longitude={stateObj.coordinates.longitude}>
+                <Marker latitude={stateObj!.coordinates!.latitude} longitude={stateObj!.coordinates!.longitude}>
                     <button className="btn-size" onClick={(e) => {
                         e.preventDefault();
                         setIndividualShow(stateObj)
@@ -78,7 +78,7 @@ const Map = ({stateObj}: {stateObj: stateDataObject | null}) => {
                 <>
                     {stateDataGlobal.map((state: stateDataObject, index)=>{
                         return(
-                        <Marker key={index} latitude={state.coordinates.latitude} longitude={state.coordinates.longitude}>
+                        <Marker key={index} latitude={state!.coordinates!.latitude} longitude={state!.coordinates!.longitude}>
                             <button className="btn-size" onClick={(e) => {
                                 e.preventDefault();
                                 setIndividualShow(state)
@@ -101,8 +101,8 @@ const Map = ({stateObj}: {stateObj: stateDataObject | null}) => {
 
                 {individualShow
                 ? 
-                <Popup latitude={individualShow.coordinates.latitude} 
-                longitude={individualShow.coordinates.longitude}
+                <Popup latitude={individualShow!.coordinates!.latitude} 
+                longitude={individualShow!.coordinates!.longitude}
                 onClose={()=>{
                     // setShowInfo(false)
                     setIndividualShow(null)
