@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import { fetchStateData, fetchUsData, selectChosenState, selectUsData, selectViewTheme } from "./features/map/mapSlice";
-import SelectState from "./pages/SelectState";
-import Map from "./pages/Map";
+import SelectState from "./components/SelectState";
+import Map from "./components/Map";
 import Plot from "react-plotly.js";
 
 function App() {
