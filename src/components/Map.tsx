@@ -12,12 +12,12 @@ import { selectViewTheme, selectStateData, stateDataObject } from '../features/m
 const Map = ({stateObj}: {stateObj: stateDataObject | null}) => {
     const stateDataGlobal = useAppSelector(selectStateData)
     const viewTheme = useAppSelector(selectViewTheme)
-    const [dataForBar, setDataForBar] = useState(stateObj ? [{
+    const [dataForBar, setDataForBar] = useState<any>(stateObj ? [{
         y: [stateObj.positive, stateObj.hospitalizedCurrently, (stateObj.positive-stateObj.hospitalizedCurrently-stateObj.death),stateObj.death],
         x: ['Total Cases', 'Active Cases', 'Recovered','Deaths'],
         type: 'bar'
     }]:"")
-    const [layoutForBar, setLayoutForBar] = useState(stateObj ? {
+    const [layoutForBar, setLayoutForBar] = useState<any>(stateObj ? {
         width: 600,
         height: 500,
         title: `${stateObj.state} covid cases`
